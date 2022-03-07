@@ -1,0 +1,21 @@
+<div class="row" *ngIf="products">
+  <div class="col-md-6" *ngFor="let p of products._embedded.products">
+      <div class="card">
+        <div class="card-header">{{p.name}}</div>
+        <div class="card-body">
+          <table>
+            <tr>
+              <td>
+                <img height="100" src="{{this.catalogueService.host+'/photoProduct/'+p.id}}" />
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>{{p.currentPrice|number:'0.2'}} DH</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
